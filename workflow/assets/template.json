@@ -1,0 +1,41 @@
+{
+  "template_name": "Task Negotiation Protocol (TNP)",
+  "description": "A machine-only negotiation layer enabling agents to agree on tasks, constraints, priorities, and acceptance conditions.",
+  "inputs": {
+    "task_description": {
+      "type": "string",
+      "description": "The task being proposed by one agent."
+    },
+    "constraints": {
+      "type": "list",
+      "description": "Non-negotiable requirements or boundaries."
+    },
+    "agent_capabilities": {
+      "type": "list",
+      "description": "Capabilities of the receiving agent relevant to the task."
+    },
+    "priority_level": {
+      "type": "string",
+      "description": "Urgency or importance of the task."
+    }
+  },
+  "workflow": [
+    {
+      "step": "evaluate",
+      "action": "Receiving agent evaluates task feasibility based on constraints and capabilities."
+    },
+    {
+      "step": "counter",
+      "action": "If needed, agent proposes counter-constraints or modified parameters."
+    },
+    {
+      "step": "resolve",
+      "action": "Agents converge on mutually acceptable parameters."
+    },
+    {
+      "step": "finalize",
+      "action": "Protocol outputs a deterministic acceptance or rejection packet."
+    }
+  ],
+  "output_format": "json"
+}
